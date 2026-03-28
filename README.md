@@ -4,7 +4,7 @@
 
 In this task, the goal was to restore a broken virtual machine, locate and mount the logical volume containing the `trouble` service binary, fix several system-level issues, and finally make the HTTP service accessible in a browser.
 
-According to the task description, the `trouble` executable is located on the filesystem of the `sysadmin` logical volume inside the `opt` volume group, and the final result should be successful access to the service through a web browser. The structure and sequence of steps in this README are based on the original practice assignment. fileciteturn2file0
+According to the task description, the `trouble` executable is located on the filesystem of the `sysadmin` logical volume inside the `opt` volume group, and the final result should be successful access to the service through a web browser. The structure and sequence of steps in this README are based on the original practice assignment.
 
 ---
 
@@ -78,7 +78,7 @@ Actions taken:
 - applied the configuration with `netplan apply`;
 - confirmed successful IPv4 address assignment.
 
-This part of the task, including the netplan, DHCP, and MAC address issue, is described in the original assignment text. fileciteturn2file0
+This part of the task, including the netplan, DHCP, and MAC address issue, is described in the original assignment text. 
 
 ### 5. Fixing DNS Resolution
 
@@ -95,7 +95,7 @@ Actions taken:
 hosts: files dns
 ```
 
-After that, DNS resolution started working normally, and package installation became possible again. This follows directly from the task text, where `getent` and the `hosts: files dns` line are used as the validation point for the resolver fix. fileciteturn2file0
+After that, DNS resolution started working normally, and package installation became possible again. This follows directly from the task text, where `getent` and the `hosts: files dns` line are used as the validation point for the resolver fix. 
 
 ### 6. Recovering LVM and the Filesystem
 
@@ -111,7 +111,7 @@ Actions taken:
 - repaired it with `xfs_repair`;
 - successfully mounted it to `/opt/sysadmin`.
 
-The original task explicitly mentions activating the volume, checking the superblock, using `xfs_repair`, and locating the binary at `/opt/sysadmin/bin/trouble`. fileciteturn2file0
+The original task explicitly mentions activating the volume, checking the superblock, using `xfs_repair`, and locating the binary at `/opt/sysadmin/bin/trouble`.
 
 ### 7. Preparing and Starting the Service
 
@@ -176,7 +176,7 @@ Actions taken:
 - stopped the conflicting `echo` service;
 - started `trouble` again.
 
-In the practice description, these three troubleshooting stages are given in the same order: `strace` with `EMFILE`, the `/locks/lockfile.lock` issue, then the `8080` port conflict and stopping the `echo` service. fileciteturn2file0
+In the practice description, these three troubleshooting stages are given in the same order: `strace` with `EMFILE`, the `/locks/lockfile.lock` issue, then the `8080` port conflict and stopping the `echo` service.
 
 ### 10. Publishing the Service Through Nginx
 
@@ -199,7 +199,7 @@ server {
 }
 ```
 
-This exact completion method — using Nginx to proxy an external request to the local `trouble` service — is explicitly described in the original task text. fileciteturn2file0
+This exact completion method — using Nginx to proxy an external request to the local `trouble` service — is explicitly described in the original task text.
 
 ---
 
